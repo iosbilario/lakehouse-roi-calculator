@@ -272,10 +272,10 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Container principal
-st.markdown(\'<div class="calculator-container">\', unsafe_allow_html=True)
+st.markdown("""<div class="calculator-container">""", unsafe_allow_html=True)
 
 # Título
-st.markdown(\'<h1 class="main-title">💰 Calcule o ROI do seu Lakehouse</h1>\', unsafe_allow_html=True)
+st.markdown("""<h1 class="main-title">💰 Calcule o ROI do seu Lakehouse</h1>""", unsafe_allow_html=True)
 
 # Seção de metodologia (sempre visível)
 with st.expander("📚 Como é calculado o ROI?", expanded=False):
@@ -324,8 +324,8 @@ if st.button("🚀 Calcular ROI"):
     roi = (on_prem_cost - cloud_cost) / cloud_cost
 
     # Resultados
-    st.markdown(\'<div class="results-section">\', unsafe_allow_html=True)
-    st.markdown(\'<h2 class="results-title">📈 Resultados</h2>\', unsafe_allow_html=True)
+    st.markdown("""<div class="results-section">""", unsafe_allow_html=True)
+    st.markdown("""<h2 class="results-title">📈 Resultados</h2>""", unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     with col1:
@@ -361,7 +361,7 @@ if st.button("🚀 Calcular ROI"):
         payback_months = cloud_cost / (on_prem_cost - cloud_cost) if (on_prem_cost - cloud_cost) > 0 else 0
         st.metric("⏱️ Payback", f"{payback_months:.1f} meses" if payback_months > 0 else "Imediato")
     
-    st.markdown(\'</div>\', unsafe_allow_html=True)
+    st.markdown("""</div>""", unsafe_allow_html=True)
     
     # Botão para gerar relatório PDF
     st.markdown("### 📄 Relatório Detalhado")
@@ -373,14 +373,14 @@ if st.button("🚀 Calcular ROI"):
     st.download_button(
         label="📥 Baixar Relatório PDF",
         data=report_content,
-        file_name=f"relatorio_roi_lakehouse_{datetime.now().strftime(\'%Y%m%d_%H%M\')}.md",
+        file_name=f"relatorio_roi_lakehouse_{datetime.now().strftime(\"%Y%m%d_%H%M\")}.md",
         mime="text/markdown",
         help="Baixe um relatório detalhado em formato Markdown"
     )
     
     st.success("✅ Cálculo realizado com sucesso!")
 
-st.markdown(\'</div>\', unsafe_allow_html=True)
+st.markdown("""</div>""", unsafe_allow_html=True)
 
 # Rodapé
 st.markdown("""
