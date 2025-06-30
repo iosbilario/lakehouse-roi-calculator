@@ -373,7 +373,7 @@ if st.button("🚀 Calcular ROI"):
     st.download_button(
         label="📥 Baixar Relatório PDF",
         data=report_content,
-        file_name=f"relatorio_roi_lakehouse_{datetime.now().strftime(\"%Y%m%d_%H%M\")}.md",
+        file_name=f"relatorio_roi_lakehouse_{datetime.now().strftime("%Y%m%d_%H%M")}.md",
         mime="text/markdown",
         help="Baixe um relatório detalhado em formato Markdown"
     )
