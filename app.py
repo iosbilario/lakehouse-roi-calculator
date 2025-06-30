@@ -52,7 +52,7 @@ O ROI é calculado usando a fórmula:
 st.markdown("""
 <style>
     /* Importar fonte SF Pro Display similar ao iOS */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url(\'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap\');
     
     /* Reset e configurações gerais */
     .main {
@@ -75,7 +75,7 @@ st.markdown("""
     
     /* Título principal */
     .main-title {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: \'Inter\', -apple-system, BlinkMacSystemFont, sans-serif;
         font-size: 2.2rem;
         font-weight: 700;
         color: #1a1a1a;
@@ -102,7 +102,7 @@ st.markdown("""
         border: 2px solid #e1e5e9;
         border-radius: 15px;
         padding: 12px 16px;
-        font-family: 'Inter', sans-serif;
+        font-family: \'Inter\', sans-serif;
         font-size: 1.1rem;
         font-weight: 500;
         transition: all 0.3s ease;
@@ -120,7 +120,7 @@ st.markdown("""
         border: none;
         border-radius: 20px;
         padding: 15px 30px;
-        font-family: 'Inter', sans-serif;
+        font-family: \'Inter\', sans-serif;
         font-size: 1.1rem;
         font-weight: 600;
         width: 100%;
@@ -144,7 +144,7 @@ st.markdown("""
     }
     
     .metric-container h3 {
-        font-family: 'Inter', sans-serif;
+        font-family: \'Inter\', sans-serif;
         font-size: 0.9rem;
         font-weight: 500;
         color: #666;
@@ -152,7 +152,7 @@ st.markdown("""
     }
     
     .metric-container p {
-        font-family: 'Inter', sans-serif;
+        font-family: \'Inter\', sans-serif;
         font-size: 2rem;
         font-weight: 700;
         color: #1a1a1a;
@@ -161,7 +161,7 @@ st.markdown("""
     
     /* Labels dos inputs */
     .stSlider label, .stNumberInput label {
-        font-family: 'Inter', sans-serif;
+        font-family: \'Inter\', sans-serif;
         font-weight: 600;
         color: #333;
         font-size: 1rem;
@@ -185,7 +185,7 @@ st.markdown("""
     }
     
     .results-title {
-        font-family: 'Inter', sans-serif;
+        font-family: \'Inter\', sans-serif;
         font-size: 1.5rem;
         font-weight: 700;
         color: #1a1a1a;
@@ -208,7 +208,7 @@ st.markdown("""
         margin-top: 3rem;
         padding: 1rem;
         color: rgba(255, 255, 255, 0.8);
-        font-family: 'Inter', sans-serif;
+        font-family: \'Inter\', sans-serif;
         font-size: 0.9rem;
     }
     
@@ -229,7 +229,7 @@ st.markdown("""
         border: none;
         border-radius: 15px;
         padding: 10px 20px;
-        font-family: 'Inter', sans-serif;
+        font-family: \'Inter\', sans-serif;
         font-size: 0.9rem;
         font-weight: 600;
         transition: all 0.3s ease;
@@ -241,14 +241,41 @@ st.markdown("""
         transform: translateY(-1px);
         box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
     }
+
+    /* Esconder elementos específicos do Streamlit que podem causar blocos em branco */
+    .stApp > header {
+        display: none; /* Esconde o cabeçalho padrão do Streamlit */
+    }
+    .stApp > footer {
+        display: none; /* Esconde o rodapé padrão do Streamlit */
+    }
+    /* Ajuste para o botão de download */
+    .stDownloadButton > button {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+        border: none;
+        border-radius: 15px;
+        padding: 10px 20px;
+        font-family: \'Inter\', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        margin-top: 1rem;
+        width: auto; /* Ajusta a largura para não ocupar 100% */
+    }
+    .stDownloadButton > button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    }
 </style>
 """, unsafe_allow_html=True)
 
 # Container principal
-st.markdown('<div class="calculator-container">', unsafe_allow_html=True)
+st.markdown(\'<div class="calculator-container">\', unsafe_allow_html=True)
 
 # Título
-st.markdown('<h1 class="main-title">💰 Calcule o ROI do seu Lakehouse</h1>', unsafe_allow_html=True)
+st.markdown(\'<h1 class="main-title">💰 Calcule o ROI do seu Lakehouse</h1>\', unsafe_allow_html=True)
 
 # Seção de metodologia (sempre visível)
 with st.expander("📚 Como é calculado o ROI?", expanded=False):
@@ -297,8 +324,8 @@ if st.button("🚀 Calcular ROI"):
     roi = (on_prem_cost - cloud_cost) / cloud_cost
 
     # Resultados
-    st.markdown('<div class="results-section">', unsafe_allow_html=True)
-    st.markdown('<h2 class="results-title">📈 Resultados</h2>', unsafe_allow_html=True)
+    st.markdown(\'<div class="results-section">\', unsafe_allow_html=True)
+    st.markdown(\'<h2 class="results-title">📈 Resultados</h2>\', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     with col1:
@@ -334,7 +361,7 @@ if st.button("🚀 Calcular ROI"):
         payback_months = cloud_cost / (on_prem_cost - cloud_cost) if (on_prem_cost - cloud_cost) > 0 else 0
         st.metric("⏱️ Payback", f"{payback_months:.1f} meses" if payback_months > 0 else "Imediato")
     
-    st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown(\'</div>\', unsafe_allow_html=True)
     
     # Botão para gerar relatório PDF
     st.markdown("### 📄 Relatório Detalhado")
@@ -346,14 +373,14 @@ if st.button("🚀 Calcular ROI"):
     st.download_button(
         label="📥 Baixar Relatório PDF",
         data=report_content,
-        file_name=f"relatorio_roi_lakehouse_{datetime.now().strftime('%Y%m%d_%H%M')}.md",
+        file_name=f"relatorio_roi_lakehouse_{datetime.now().strftime(\'%Y%m%d_%H%M\')}.md",
         mime="text/markdown",
         help="Baixe um relatório detalhado em formato Markdown"
     )
     
     st.success("✅ Cálculo realizado com sucesso!")
 
-st.markdown('</div>', unsafe_allow_html=True)
+st.markdown(\'</div>\', unsafe_allow_html=True)
 
 # Rodapé
 st.markdown("""
@@ -363,4 +390,6 @@ st.markdown("""
     <small>Calculadora de ROI para Lakehouse na AWS</small>
 </div>
 """, unsafe_allow_html=True)
+
+
 
