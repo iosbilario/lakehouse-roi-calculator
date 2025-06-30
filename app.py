@@ -52,7 +52,7 @@ O ROI é calculado usando a fórmula:
 st.markdown("""
 <style>
     /* Importar fonte SF Pro Display similar ao iOS */
-    @import url(\'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap\');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     
     /* Reset e configurações gerais */
     .main {
@@ -75,7 +75,7 @@ st.markdown("""
     
     /* Título principal */
     .main-title {
-        font-family: \'Inter\', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         font-size: 2.2rem;
         font-weight: 700;
         color: #1a1a1a;
@@ -102,7 +102,7 @@ st.markdown("""
         border: 2px solid #e1e5e9;
         border-radius: 15px;
         padding: 12px 16px;
-        font-family: \'Inter\', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 1.1rem;
         font-weight: 500;
         transition: all 0.3s ease;
@@ -120,7 +120,7 @@ st.markdown("""
         border: none;
         border-radius: 20px;
         padding: 15px 30px;
-        font-family: \'Inter\', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 1.1rem;
         font-weight: 600;
         width: 100%;
@@ -144,7 +144,7 @@ st.markdown("""
     }
     
     .metric-container h3 {
-        font-family: \'Inter\', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 0.9rem;
         font-weight: 500;
         color: #666;
@@ -152,7 +152,7 @@ st.markdown("""
     }
     
     .metric-container p {
-        font-family: \'Inter\', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 2rem;
         font-weight: 700;
         color: #1a1a1a;
@@ -161,7 +161,7 @@ st.markdown("""
     
     /* Labels dos inputs */
     .stSlider label, .stNumberInput label {
-        font-family: \'Inter\', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-weight: 600;
         color: #333;
         font-size: 1rem;
@@ -185,7 +185,7 @@ st.markdown("""
     }
     
     .results-title {
-        font-family: \'Inter\', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 1.5rem;
         font-weight: 700;
         color: #1a1a1a;
@@ -208,7 +208,7 @@ st.markdown("""
         margin-top: 3rem;
         padding: 1rem;
         color: rgba(255, 255, 255, 0.8);
-        font-family: \'Inter\', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 0.9rem;
     }
     
@@ -229,7 +229,7 @@ st.markdown("""
         border: none;
         border-radius: 15px;
         padding: 10px 20px;
-        font-family: \'Inter\', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 0.9rem;
         font-weight: 600;
         transition: all 0.3s ease;
@@ -256,7 +256,7 @@ st.markdown("""
         border: none;
         border-radius: 15px;
         padding: 10px 20px;
-        font-family: \'Inter\', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 0.9rem;
         font-weight: 600;
         transition: all 0.3s ease;
@@ -373,7 +373,7 @@ if st.button("🚀 Calcular ROI"):
     st.download_button(
         label="📥 Baixar Relatório PDF",
         data=report_content,
-        file_name=f"relatorio_roi_lakehouse_{datetime.now().strftime("%Y%m%d_%H%M")}.md",
+        file_name=f"relatorio_roi_lakehouse_{datetime.now().strftime('%Y%m%d_%H%M')}.md",
         mime="text/markdown",
         help="Baixe um relatório detalhado em formato Markdown"
     )
