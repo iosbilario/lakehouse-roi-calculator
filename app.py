@@ -1,7 +1,6 @@
 # app.py
 
 import streamlit as st
-import openai
 
 st.set_page_config(layout="wide", page_title="Calcule o ROI do seu Lakehouse")
 
@@ -27,20 +26,6 @@ if st.button("➡️ Resumo em 5 linhas"):
     with col2:
         st.metric(label="ROI", value=f"{roi:.2%}")
 
-    # Chamada OpenAI
-    openai.api_key = st.secrets["openai_api_key"]
-    prompt = f"Explique para um CFO o ROI de {roi:.2%} migrando para lakehouse."
-
-    try:
-        response = openai.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.7,
-            max_tokens=150
-        )
-        openai_summary = response.choices[0].message.content
-        st.success(openai_summary)
-    except Exception as e:
-        st.error(f"Erro ao chamar a OpenAI: {e}")
+    st.info("A funcionalidade de resumo da IA foi desativada.")
 
 
