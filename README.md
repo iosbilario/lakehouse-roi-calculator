@@ -59,5 +59,5 @@ Este aplicativo foi desenvolvido com foco em privacidade e não coleta ou armaze
 
 ---
 
-Desenvolvido por Manus AI para Velotax.
+Desenvolvido por LBP Tecnologia 
 
