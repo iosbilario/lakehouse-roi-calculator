@@ -244,10 +244,93 @@ st.markdown("""
 
     /* Esconder elementos específicos do Streamlit que podem causar blocos em branco */
     .stApp > header {
-        display: none; /* Esconde o cabeçalho padrão do Streamlit */
+        display: none !important; /* Esconde o cabeçalho padrão do Streamlit */
     }
     .stApp > footer {
-        display: none; /* Esconde o rodapé padrão do Streamlit */
+        display: none !important; /* Esconde o rodapé padrão do Streamlit */
+    }
+    
+    /* CORREÇÃO ESPECÍFICA: Remover blocos brancos vazios */
+    /* Esconder containers vazios que aparecem como blocos brancos */
+    .stApp div[data-testid="stVerticalBlock"]:empty {
+        display: none !important;
+    }
+    
+    /* Esconder elementos vazios que criam blocos brancos */
+    .stApp div[data-testid="element-container"]:empty {
+        display: none !important;
+    }
+    
+    /* Remover espaçamentos de containers vazios */
+    .stApp div:empty {
+        display: none !important;
+    }
+    
+    /* Esconder blocos de markdown vazios */
+    .stMarkdown:empty {
+        display: none !important;
+    }
+    
+    /* Remover containers de coluna vazios */
+    .stApp div[data-testid="column"]:empty {
+        display: none !important;
+    }
+    
+    /* Esconder elementos de layout vazios */
+    .element-container:empty {
+        display: none !important;
+    }
+    
+    /* Remover espaçamento superior desnecessário */
+    .main .block-container {
+        padding-top: 0.5rem !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Ajustar o container principal para remover espaços em branco */
+    .stApp {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* Remover espaçamento do elemento main */
+    .main {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Corrigir espaçamentos entre seções */
+    .stMarkdown {
+        margin-bottom: 0.5rem !important;
+        margin-top: 0.5rem !important;
+    }
+    
+    /* Remover espaçamentos excessivos dos containers de elementos */
+    .element-container {
+        margin-bottom: 0.5rem !important;
+        margin-top: 0.5rem !important;
+    }
+    
+    /* Ajustar espaçamento dos botões */
+    .stButton {
+        margin-bottom: 1rem !important;
+        margin-top: 0.5rem !important;
+    }
+    
+    /* Remover espaços em branco de divs vazias do Streamlit */
+    .stApp div[data-testid="stVerticalBlock"] > div:empty {
+        display: none !important;
+    }
+    
+    /* Ajustar espaçamento das seções de resultados */
+    .results-section {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Remover espaçamentos desnecessários entre elementos */
+    .stApp > div > div > div > div {
+        margin-bottom: 0.5rem !important;
     }
     /* Ajuste para o botão de download */
     .stDownloadButton > button {
